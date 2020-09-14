@@ -5,13 +5,13 @@ posts = [
 	{
     'author':'Pratik',
     'title': 'blogpost 1',
-    'content':'lfe',
-    'date': '12/02/08',
+    'content':'a day in my life',
+    'date': '12/02/20',
 	},
 	{
-    'author':'sweety',
+    'author':'ritik',
     'title': 'blogpost 2',
-    'content':'life2',
+    'content':'my life',
     'date': '24/08/20',
 	}
 ]
