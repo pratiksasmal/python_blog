@@ -43,8 +43,17 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+          {% if messages %}
+          {% for messages in messages %}
+          <div class="alert alert-{{ messages.tags}}">
+            {{message }}
+          </div>
+          {% end for %}
+          {% endif%}
           {% block content %}{% endblock %}
+          
         </div>
+
         <div class="col-md-4">
           <div class="content-section">
             <h3>Our Sidebar</h3>
