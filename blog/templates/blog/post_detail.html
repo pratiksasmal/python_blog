@@ -2,14 +2,14 @@
 <!--extending the base template -->
 {% block content %}
   <article class="media content-section">
-    <img class ="rounded-circle article-img" src ="{{ post.author.profile.image.url }}"> <!--adding authors image to main page-->
+    <img class ="rounded-circle article-img" src ="{{ object.author.profile.image.url }}"> <!--adding authors image to main page-->
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="#">{{ post.author }}</a>
-          <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+          <a class="mr-2" href="#">{{ object.author }}</a>
+          <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
         </div>
-        <h2 class="article-title">{{ post.title }}</h2>
-        <p class="article-content">{{ post.content }}</p>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
       </div>
   </article>
 {% endblock content %}
