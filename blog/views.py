@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+	ListView,
+	DetailView,
+	CreateView,
+    UpdateView,
+	DeleteView
+)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 
@@ -37,7 +43,7 @@ class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):#creat
 		return False
 
 
-class PostUpdateView(LoginRequiredMixin, UpdateView):#create new posts
+class PostUpdateView(LoginRequiredMixin, UpdateView):
 	model = Post
 	fields = ['title', 'content']
 	#overwriting the form valid method
@@ -49,6 +55,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):#create new posts
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Post
+	success_url = '/'#redirects to home after deleting the psot
 
 	def test_func(self):
 		post = self.get_object()
